@@ -11,38 +11,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    html, body {
       margin: 0;
       font-family: 'Noto Sans Thai', sans-serif;
-      background: #6d6e70;
+      background: #ebedf2;
       color: #333;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      overflow: hidden;
+    /* ครอบทั้งหน้า */
+    .layout {
+      max-width: 1450px;
+      display: flex;
+      padding: 40px;
+      box-sizing: border-box;
+      margin: 0 auto;
     }
 
-    header {
-      background: #1f4e79;
+    /* ฝั่งซ้าย */
+    .sidebar {
+      width: 340px;
+      background: #252526;
       color: white;
-      padding: 30px;
-      text-align: center;
+      border-radius: 12px 0 0 12px;
+      padding: 40px 30px;
+      box-sizing: border-box;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      line-height: 200%;
     }
 
-    header h1 {
+    .sidebar h1 {
       margin: 0;
       font-size: 32px;
     }
 
-    header p {
-      margin-top: 10px;
+    .sidebar p {
+      margin-top: 12px;
       font-size: 16px;
       opacity: 0.9;
+    }
+
+    /* ฝั่งขวา */
+    .container {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+      margin: 0;
     }
 
     .content {
@@ -50,67 +65,176 @@
     }
 
     .news-item {
+      display: flex;
+      gap: 24px;
       border-bottom: 1px solid #e0e0e0;
-      padding: 20px 0;
+      padding: 24px 0;
+      align-items: flex-start;
     }
 
     .news-item:last-child {
       border-bottom: none;
     }
 
-    .date {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 8px;
+    /* กล่องครอบวันที่ (ขอบนอก) */
+    .date-box {
+      background: #f7faff;
+      border-radius: 10px;
+      padding: 10px 30px 10px 5px;
+      display: inline-block;
+    }
+
+    /* table วันที่ */
+    .news-date {
+      min-width: 90px;
+      text-align: right;
+      font-weight: 700;
+      color: #252526;
+      font-size: 15px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      background: transparent;
+    }
+
+    .news-date td {
+      padding: 0;
+      line-height: 1.1;
+      vertical-align: middle;
+    }
+
+    .news-day {
+      min-width: 70px;
+      font-size: 48px;
+      font-weight: 700;
+      color: #252526;
+      text-align: right;
+    }
+
+    .news-content {
+      flex: 1;
     }
 
     .title {
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 10px;
-      color: #1f4e79;
+      color: #252526;
     }
 
     .description {
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .month {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .year {
+            font-size: 14px;
+      line-height: 1;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #fafafa;
+      background: #f7faff;
       font-size: 14px;
       color: #666;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Digital Tech Lab</h1>
-      <p>แจ้งข่าวสารและประกาศสำคัญ</p>
-    </header>
 
-    <div class="content">
-      <div class="news-item">
-        <div class="title">ประกาศเปลี่ยนชื่อโดเมนอีเมลสำหรับนักศึกษา</div>
-        <div class="description">
-          เปลี่ยนเฉพาะอีเมล office365.sut.ac.th เป็น > รหัสนักศึกษา@sut.ac.th มีผลตั้งแต่ 1 พฤษภาคม 2569 เป็นต้นไป
-        </div>
-      </div>
-      
-      <div class="news-item">
-        <div class="title">ประกาศเปลี่ยนชื่อโดเมนอีเมลสำหรับนักศึกษา</div>
-        <div class="description">
-          เปลี่ยนเฉพาะอีเมล office365.sut.ac.th เป็น > รหัสนักศึกษา@sut.ac.th มีผลตั้งแต่ 1 พฤษภาคม 2569 เป็นต้นไป
-        </div>
-      </div>
+<body>
+
+  <div class="layout">
+
+    <!-- ฝั่งซ้าย -->
+    <div class="sidebar">
+      <img src="ccs.png" alt="logo">
+      <h1><br>DIGITAL<br>TECH<br>LAB</h1>
+      <p>แจ้งข่าวสารและประกาศสำคัญ</p>
     </div>
 
-    <footer>
-      © 2026 Digital Technology Laboratory | All Rights Reserved
-    </footer>
+    <!-- ฝั่งขวา -->
+    <div class="container">
+
+      <div class="content">
+
+        <!-- ข่าวที่ 1 -->
+        <div class="news-item">
+
+          <div class="date-box">
+            <table class="news-date">
+              <tr>
+                <td class="news-day" rowspan="2">1</td>
+                <td class="month">พ.ค.</td>
+              </tr>
+              <tr>
+                <td class="year">2026</td>
+              </tr>
+              <tr>
+                <td class="year" colspan="2">เป็นต้นไป</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="news-content">
+            <div class="title">
+              เปลี่ยนชื่อโดเมนอีเมล 365 สำหรับนักศึกษาเป็น @sut.ac.th
+            </div>
+
+            <div class="description">
+              เฉพาะนักศึกษาเท่านั้น เปลี่ยนจาก
+              รหัสนักศึกษา@office365.sut.ac.th
+              เป็น
+              รหัสนักศึกษา@sut.ac.th
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ข่าวที่ 2 -->
+        <div class="news-item">
+
+          <div class="date-box">
+            <table class="news-date">
+              <tr>
+                <td class="news-day" rowspan="2">15</td>
+                <td class="month">มิ.ย.</td>
+              </tr>
+              <tr>
+                <td class="year">2026</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="news-content">
+            <div class="title">
+              ยกเลิกบัญชี office365 สำหรับคณาจารย์และบุคลากร
+            </div>
+
+            <div class="description">
+              ยกเลิกการให้บริการอีเมล
+              office365.sut.ac.th
+              สำหรับคณาจารย์และบุคลากร
+              เพื่อให้ใช้เฉพาะอีเมล
+              @sut.ac.th
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer>
+        © 2026 Digital Technology Laboratory | All Rights Reserved
+      </footer>
+
+    </div>
+
   </div>
+
 </body>
 </html>
