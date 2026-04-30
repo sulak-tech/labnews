@@ -4,21 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DigitalLab - ข่าวสารประกาศ</title>
-
-  <!-- โหลดฟอนต์ Noto Sans Thai -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet">
-
   <style>
     html, body {
       margin: 0;
       font-family: 'Noto Sans Thai', sans-serif;
-      background: #ebedf2;
+      background: radial-gradient(circle at 720px 110px, #fffaf0, #e1e3e8);
+      background-attachment: fixed;
       color: #333;
     }
-
-    /* ครอบทั้งหน้า */
     .layout {
       max-width: 1450px;
       display: flex;
@@ -26,8 +23,6 @@
       box-sizing: border-box;
       margin: 0 auto;
     }
-
-    /* ฝั่งซ้าย */
     .sidebar {
       width: 340px;
       background: #252526;
@@ -38,19 +33,15 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       line-height: 200%;
     }
-
     .sidebar h1 {
       margin: 0;
       font-size: 32px;
     }
-
     .sidebar p {
       margin-top: 12px;
       font-size: 16px;
       opacity: 0.9;
     }
-
-    /* ฝั่งขวา */
     .container {
       flex: 1;
       background: #ffffff;
@@ -59,11 +50,9 @@
       overflow: hidden;
       margin: 0;
     }
-
     .content {
       padding: 30px;
     }
-
     .news-item {
       display: flex;
       gap: 24px;
@@ -71,20 +60,15 @@
       padding: 24px 0;
       align-items: flex-start;
     }
-
     .news-item:last-child {
       border-bottom: none;
     }
-
-    /* กล่องครอบวันที่ (ขอบนอก) */
     .date-box {
-      background: #f7faff;
+      background: white;
       border-radius: 10px;
       padding: 10px 30px 10px 5px;
       display: inline-block;
     }
-
-    /* table วันที่ */
     .news-date {
       min-width: 90px;
       text-align: right;
@@ -95,13 +79,11 @@
       border-spacing: 0;
       background: transparent;
     }
-
     .news-date td {
       padding: 0;
       line-height: 1.1;
       vertical-align: middle;
     }
-
     .news-day {
       min-width: 70px;
       font-size: 48px;
@@ -109,44 +91,36 @@
       color: #252526;
       text-align: right;
     }
-
     .news-content {
       flex: 1;
     }
-
     .title {
       font-size: 22px;
       font-weight: 700;
       margin-bottom: 10px;
       color: #252526;
     }
-
-.title a {
-  color: #252526;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.title a:hover {
-  color: #f26522;
-  text-decoration: underline;
-}
-
+    .title a {
+      color: #252526;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .title a:hover {
+      color: #f26522;
+      text-decoration: underline;
+    }
     .description {
       font-size: 16px;
       line-height: 1.7;
     }
-
     .month {
       font-size: 20px;
       line-height: 1;
     }
-
     .year {
-            font-size: 14px;
+      font-size: 14px;
       line-height: 1;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -154,12 +128,42 @@
       font-size: 14px;
       color: #666;
     }
+
+    /* mobile header ซ่อนตอนจอใหญ่ */
+    .mobile-header {
+      display: none;
+      background: #252526;
+      color: white;
+      text-align: left;
+      padding: 16px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-radius: 12px 12px 0 0;
+    }
+
+    /* ซ่อน sidebar เมื่อหน้าจอแคบ */
+    @media (max-width: 768px) {
+      .layout {
+        padding: 0;
+        flex-direction: column;
+      }
+      .sidebar {
+        display: none;
+      }
+      .container {
+        border-radius: 0 0 12px 12px;
+      }
+      .mobile-header {
+        display: block;
+      }
+    }
   </style>
 </head>
-
 <body>
-
   <div class="layout">
+    <!-- หัวเรื่องสำหรับมือถือ -->
+    <div class="mobile-header">DIGITAL TECH LAB</div>
 
     <!-- ฝั่งซ้าย -->
     <div class="sidebar">
@@ -170,12 +174,8 @@
 
     <!-- ฝั่งขวา -->
     <div class="container">
-
       <div class="content">
-
-        <!-- ข่าวที่ 1 -->
         <div class="news-item">
-
           <div class="date-box">
             <table class="news-date">
               <tr>
@@ -190,14 +190,12 @@
               </tr>
             </table>
           </div>
-
           <div class="news-content">
             <div class="title">
-                            <a href="https://www.facebook.com/share/p/1Ch7puw1W3/" target="_blank">
-                  เปลี่ยนชื่อโดเมนอีเมล 365 สำหรับนักศึกษาเป็น @sut.ac.th
-                            </a>
+              <a href="https://www.facebook.com/share/p/1Ch7puw1W3/" target="_blank">
+                เปลี่ยนชื่อโดเมนอีเมล 365 สำหรับนักศึกษาเป็น @sut.ac.th
+              </a>
             </div>
-
             <div class="description">
               เฉพาะนักศึกษาเท่านั้น เปลี่ยนจาก
               รหัสนักศึกษา@office365.sut.ac.th
@@ -205,12 +203,8 @@
               รหัสนักศึกษา@sut.ac.th
             </div>
           </div>
-
         </div>
-
-        <!-- ข่าวที่ 2 -->
         <div class="news-item">
-
           <div class="date-box">
             <table class="news-date">
               <tr>
@@ -222,14 +216,12 @@
               </tr>
             </table>
           </div>
-
           <div class="news-content">
             <div class="title">
               <a href="https://www.facebook.com/share/p/18bGMUmzrt/" target="_blank">
-              ยกเลิกบัญชี office365 สำหรับคณาจารย์และบุคลากร
+                ยกเลิกบัญชี office365 สำหรับคณาจารย์และบุคลากร
               </a>
             </div>
-
             <div class="description">
               ยกเลิกการให้บริการอีเมล
               office365.sut.ac.th
@@ -238,18 +230,12 @@
               @sut.ac.th
             </div>
           </div>
-
         </div>
-
       </div>
-
       <footer>
         © 2026 Digital Technology Laboratory | All Rights Reserved
       </footer>
-
     </div>
-
   </div>
-
 </body>
 </html>
