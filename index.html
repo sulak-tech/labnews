@@ -22,6 +22,7 @@
       padding: 40px;
       box-sizing: border-box;
       margin: 0 auto;
+      filter: drop-shadow(0 8px 24px rgba(109,110,112,0.16));
     }
     .sidebar {
       width: 340px;
@@ -30,7 +31,6 @@
       border-radius: 12px 0 0 12px;
       padding: 40px 30px;
       box-sizing: border-box;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       line-height: 200%;
     }
     .sidebar h1 {
@@ -46,7 +46,6 @@
       flex: 1;
       background: #ffffff;
       border-radius: 0 12px 12px 0;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       overflow: hidden;
       margin: 0;
     }
@@ -128,7 +127,6 @@
       font-size: 14px;
       color: #666;
     }
-
     /* mobile header ซ่อนตอนจอใหญ่ */
     .mobile-header {
       display: none;
@@ -141,7 +139,6 @@
       letter-spacing: 2px;
       border-radius: 12px 12px 0 0;
     }
-
     /* ซ่อน sidebar เมื่อหน้าจอแคบ */
     @media (max-width: 768px) {
       .layout {
@@ -164,14 +161,12 @@
   <div class="layout">
     <!-- หัวเรื่องสำหรับมือถือ -->
     <div class="mobile-header">DIGITAL TECH LAB</div>
-
     <!-- ฝั่งซ้าย -->
     <div class="sidebar">
       <img src="ccs.png" alt="logo">
       <h1><br>DIGITAL<br>TECH<br>LAB</h1>
       <p>แจ้งข่าวสารและประกาศสำคัญ</p>
     </div>
-
     <!-- ฝั่งขวา -->
     <div class="container">
       <div class="content">
