@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --txt-w: #fcfcfc;
+      --txt-b: #121212;
+    }
     html, body {
       margin: 0;
       font-family: 'Noto Sans Thai', sans-serif;
@@ -16,23 +20,61 @@
       background-attachment: fixed;
       color: #333;
     }
+
     .layout {
       max-width: 1450px;
       display: flex;
-      padding: 40px;
+      padding: 40px 40px 20px 40px;
       box-sizing: border-box;
       margin: 0 auto;
       filter: drop-shadow(0 8px 24px rgba(109,110,112,0.16));
     }
     .sidebar {
+            position: relative;
+      overflow: hidden;
       width: 340px;
-      background: #252526;
-      color: white;
+      background: var(--txt-b);
+      color: var(--txt-w);
       border-radius: 12px 0 0 12px;
       padding: 40px 30px;
       box-sizing: border-box;
       line-height: 200%;
     }
+
+.sidebar::after {
+
+z-index: 0;
+  content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -120px;   /* 👈 ดันออกนอกกรอบ */
+  bottom: -120px;
+
+  background: url('surya.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+  pointer-events: none;
+
+  animation: spin 180s linear infinite; /* 👈 หมุน */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
     .sidebar h1 {
       margin: 0;
       font-size: 32px;
@@ -44,7 +86,7 @@
     }
     .container {
       flex: 1;
-      background: #ffffff;
+      background: var(--txt-w);
       border-radius: 0 12px 12px 0;
       overflow: hidden;
       margin: 0;
@@ -63,7 +105,7 @@
       border-bottom: none;
     }
     .date-box {
-      background: white;
+      background: var(--txt-w);
       border-radius: 10px;
       padding: 10px 30px 10px 5px;
       display: inline-block;
@@ -72,7 +114,7 @@
       min-width: 90px;
       text-align: right;
       font-weight: 700;
-      color: #252526;
+      color: var(--txt-b);
       font-size: 15px;
       border-collapse: collapse;
       border-spacing: 0;
@@ -87,7 +129,7 @@
       min-width: 70px;
       font-size: 48px;
       font-weight: 700;
-      color: #252526;
+      color: var(--txt-b);
       text-align: right;
     }
     .news-content {
@@ -97,10 +139,10 @@
       font-size: 22px;
       font-weight: 700;
       margin-bottom: 10px;
-      color: #252526;
+      color: var(--txt-b);
     }
     .title a {
-      color: #252526;
+      color: var(--txt-b);
       text-decoration: none;
       font-weight: 700;
     }
@@ -121,17 +163,18 @@
       line-height: 1;
     }
     footer {
+      margin-top: -25px;
       text-align: center;
-      padding: 20px;
-      background: #f7faff;
+      padding: 30px 20px;
+      background: transparent;
       font-size: 14px;
-      color: #666;
+      color: #6d6e70;
     }
     /* mobile header ซ่อนตอนจอใหญ่ */
     .mobile-header {
       display: none;
-      background: #252526;
-      color: white;
+      background: var(--txt-b);
+      color: var(--txt-w);
       text-align: left;
       padding: 16px;
       font-size: 22px;
@@ -161,8 +204,8 @@
       }
 
       #ccs:hover {
-        fill: #f7faff;
-        filter: drop-shadow( 0 0 6px #f7faff); 
+        fill: #f8faff;
+        filter: drop-shadow( 0 0 6px #f8faff); 
       }
 
       #sut {
@@ -170,8 +213,8 @@
       }
 
       #sut:hover {
-        fill: #ff6924;
-        filter: drop-shadow( 0 0 10px #ff6924); 
+        fill: #ff6a24;
+        filter: drop-shadow( 0 0 10px #ff6a24); 
       }
 
 
@@ -291,6 +334,26 @@
             </div>
           </div>
         </div>
+
+       <div class="news-item">
+          <div class="date-box">
+            <table class="news-date">
+              <tr>
+                <td class="news-day" rowspan="2">8</td>
+                <td class="month">พ.ค.</td>
+              </tr>
+              <tr>
+                <td class="year">2026</td>
+              </tr>
+            </table>
+          </div>
+          <div class="news-content">
+            <img src="2026-05-06 15_02_28-LINE.jpg" style="width: 100%;">
+          </div>
+        </div>
+
+
+
         <div class="news-item">
           <div class="date-box">
             <table class="news-date">
@@ -318,11 +381,15 @@
             </div>
           </div>
         </div>
+
+
+
+
       </div>
+    </div>
+  </div>
       <footer>
         © 2026 Digital Technology Laboratory | All Rights Reserved
       </footer>
-    </div>
-  </div>
 </body>
 </html>
