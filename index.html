@@ -35,10 +35,10 @@
       width: 340px;
       background: var(--txt-b);
       color: var(--txt-w);
-      border-radius: 12px 0 0 12px;
+      border-radius: 8px 0 0 8px;
       padding: 40px 30px;
       box-sizing: border-box;
-      line-height: 200%;
+      line-height: 42px;
     }
 
 .sidebar::after {
@@ -58,7 +58,7 @@ z-index: 0;
   opacity: 0.8;
   pointer-events: none;
 
-  animation: spin 180s linear infinite; /* 👈 หมุน */
+  animation: spin 156s linear infinite; /* 👈 หมุน */
 }
 
 @keyframes spin {
@@ -76,18 +76,20 @@ z-index: 0;
 }
 
     .sidebar h1 {
-      margin: 0;
-      font-size: 32px;
+      margin-left: 10px;
+      margin-top: 50px;
+      font-size: 48px;
     }
     .sidebar p {
-      margin-top: 12px;
+      margin-top: -20px;
+      margin-left: 10px;
       font-size: 16px;
       opacity: 0.9;
     }
     .container {
       flex: 1;
       background: var(--txt-w);
-      border-radius: 0 12px 12px 0;
+      border-radius: 0 8px 8px 0;
       overflow: hidden;
       margin: 0;
     }
@@ -192,29 +194,37 @@ z-index: 0;
         display: none;
       }
       .container {
-        border-radius: 0 0 12px 12px;
+        border-radius: 0 0 8px 8px;
       }
       .mobile-header {
         display: block;
       }
     }
 
-      #ccs {
-        fill: #6d6e70;
-      }
+#ccs {
+  fill: #6d6e70;
+}
 
-      #ccs:hover {
-        fill: #f8faff;
-        filter: drop-shadow( 0 0 6px #f8faff); 
-      }
+#ccs:hover {
+  fill: #f8faff;
+  filter:
+    drop-shadow(0 0 3px #f8faff)
+    drop-shadow(0 0 10px #f8faff);
+  transition:
+    filter 3s ease-in-out;
+}
 
       #sut {
         fill: #f26522;
       }
 
       #sut:hover {
-        fill: #ff6a24;
-        filter: drop-shadow( 0 0 10px #ff6a24); 
+        fill: #ff7700;
+        filter: 
+                    drop-shadow( 0 0 3px #ff6a24)  
+                    drop-shadow( 0 0 10px #ff6a24);
+  transition:
+    filter 1s ease-in-out;
       }
 
 
@@ -299,7 +309,7 @@ z-index: 0;
     </g></a>
   </g>
 </svg>
-      <h1><br>DIGITAL<br>TECH<br>LAB</h1>
+      <h1>DIGITAL<br>TECH<br>LAB</h1>
       <p>แจ้งข่าวสารและประกาศสำคัญ</p>
     </div>
     <!-- ฝั่งขวา -->
@@ -334,25 +344,6 @@ z-index: 0;
             </div>
           </div>
         </div>
-
-       <div class="news-item">
-          <div class="date-box">
-            <table class="news-date">
-              <tr>
-                <td class="news-day" rowspan="2">8</td>
-                <td class="month">พ.ค.</td>
-              </tr>
-              <tr>
-                <td class="year">2026</td>
-              </tr>
-            </table>
-          </div>
-          <div class="news-content">
-            <img src="2026-05-06 15_02_28-LINE.jpg" style="width: 100%;">
-          </div>
-        </div>
-
-
 
         <div class="news-item">
           <div class="date-box">
